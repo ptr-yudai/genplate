@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import sys
 import json
+import os
 
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 with open("plate.json", "r") as f:
     templates = json.load(f)
 
