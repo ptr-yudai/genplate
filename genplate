@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+import sys
+import json
+
+with open("plate.json", "r") as f:
+    templates = json.load(f)
+
+def show_templates():
+    print("-=-=-=-=- List of Templates -=-=-=-=-")
+    for template in templates:
+        print(f" {template['name'][0]}\t: {template['desc']}")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+
+def gen_template(name):
+    for template in templates:
+        if name in template['name']:
+            with open(template['path'], 'r') as f:
+                print(f.read())
+            break
+
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print(f"[?] Usage: {sys.argv[0]} <template>")
+        show_templates()
+    else:
+        gen_template(sys.argv[1])

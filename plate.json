@@ -1,0 +1,12 @@
+[
+    {
+        "name": ["v8", "V8", "d8"],
+        "desc": "Template for V8 exploit",
+        "path": "templates/v8.tmpl"
+    },
+    {
+        "name": ["userland", "user"],
+        "desc": "Template for Linux user-land exploit",
+        "path": "templates/userland.tmpl"
+    }
+]
